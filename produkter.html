@@ -25,10 +25,11 @@
       <h1>Produkter & tekniske PDF-dokumenter</h1>
       <p>Klik på <em>Åbn PDF</em> for at åbne dokumentet i en ny fane. Filerne ligger i <code>pdf/</code>-mappen.</p>
 
-      <!-- CTA: avaa kaikki + lataa RAR -->
+      <!-- CTA-rivi: kaikki toiminnot -->
       <div class="cta-row" style="margin:16px 0 24px; display:flex; gap:12px; flex-wrap:wrap;">
         <a class="btn" href="#" onclick="openAllPdfs(); return false;">Åbn alle PDF’er</a>
         <a class="btn-outline" href="pdf/alle-pdf.rar">Download alle som RAR</a>
+        <a class="btn-outline" href="pdf-viewer.html">Avaa peräkkäin (1 välilehti)</a>
       </div>
 
       <div class="catalog">
@@ -171,7 +172,7 @@
     </div>
   </footer>
 
-  <!-- Avaa kaikki PDF:t: ensin tyhjät välilehdet (hyväksytään klikkauksena), sitten ladataan PDF:t niihin -->
+  <!-- Avaa kaikki PDF:t: ensin tyhjät välilehdet, sitten ladataan niihin URLit -->
   <script>
     const ALL_PDFS = [
       "pdf/niemi_isolering_forside_dansk.pdf",
@@ -188,18 +189,14 @@
     ];
 
     function openAllPdfs() {
-      // Avaa välilehdet heti klikkauksesta (selaimet sallivat tämän)
       const wins = [];
       for (let i = 0; i < ALL_PDFS.length; i++) {
         const w = window.open('about:blank', '_blank', 'noopener');
-        if (w) {
-          wins.push(w);
-        } else {
+        if (w) wins.push(w); else {
           alert("Selaimesi esti usean välilehden avaamisen.\n\nSalli ponnahdusikkunat tälle sivustolle ja yritä uudelleen.");
           return;
         }
       }
-      // Lataa PDF:t niihin pienellä viiveellä
       wins.forEach((w, i) => {
         setTimeout(() => {
           if (ALL_PDFS[i]) w.location = ALL_PDFS[i];
