@@ -171,7 +171,7 @@
     </div>
   </footer>
 
-  <!-- Avaa kaikki PDF:t pienen viiveen kanssa (pop-up estot huomioiden) -->
+  <!-- Avaa kaikki PDF:t: ensin tyhjät välilehdet (hyväksytään klikkauksena), sitten ladataan PDF:t niihin -->
   <script>
     const ALL_PDFS = [
       "pdf/niemi_isolering_forside_dansk.pdf",
@@ -186,9 +186,25 @@
       "pdf/Ventilationssystem_Dansk_Side_9_Regnhat_med_Net.pdf",
       "pdf/Ventilationssystem_Dansk_Side_10_Vejrbestandigt_Gitter.pdf"
     ];
+
     function openAllPdfs() {
-      ALL_PDFS.forEach((url, i) => {
-        setTimeout(() => window.open(url, "_blank", "noopener"), i * 350);
+      // Avaa välilehdet heti klikkauksesta (selaimet sallivat tämän)
+      const wins = [];
+      for (let i = 0; i < ALL_PDFS.length; i++) {
+        const w = window.open('about:blank', '_blank', 'noopener');
+        if (w) {
+          wins.push(w);
+        } else {
+          alert("Selaimesi esti usean välilehden avaamisen.\n\nSalli ponnahdusikkunat tälle sivustolle ja yritä uudelleen.");
+          return;
+        }
+      }
+      // Lataa PDF:t niihin pienellä viiveellä
+      wins.forEach((w, i) => {
+        setTimeout(() => {
+          if (ALL_PDFS[i]) w.location = ALL_PDFS[i];
+          else w.close();
+        }, i * 200);
       });
     }
   </script>
