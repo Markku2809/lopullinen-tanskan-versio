@@ -25,6 +25,12 @@
       <h1>Produkter & tekniske PDF-dokumenter</h1>
       <p>Klik på <em>Åbn PDF</em> for at åbne dokumentet i en ny fane. Filerne ligger i <code>pdf/</code>-mappen.</p>
 
+      <!-- CTA-rivi: avaa kaikki + lataa RAR -->
+      <div class="cta-row" style="margin:16px 0 24px; display:flex; gap:12px; flex-wrap:wrap;">
+        <a class="btn" href="#" onclick="openAllPdfs(); return false;">Åbn alle PDF’er</a>
+        <a class="btn-outline" href="pdf/alle-pdf.rar">Download alle som RAR</a>
+      </div>
+
       <div class="catalog">
 
         <!-- 1: Forside / Intro -->
@@ -164,5 +170,27 @@
       <div>© 2025</div>
     </div>
   </footer>
+
+  <!-- Avaa kaikki PDF:t (pieni viive helpottaa ponnahdusestoja) -->
+  <script>
+    const ALL_PDFS = [
+      "pdf/niemi_isolering_forside_dansk.pdf",
+      "pdf/Ventilation_Catalogue_Danish_First_Page.pdf",
+      "pdf/Ventilation_Catalogue_Danish_Page_2_BKT_Roer.pdf",
+      "pdf/Ventilation_Catalogue_Danish_Page_3_BKT_Albue.pdf",
+      "pdf/Ventilation_Catalogue_Danish_Page_4_BKT_Overgang.pdf",
+      "pdf/Ventilationssystem_Dansk_Side_5_BKT_Firkant_til_Rund.pdf",
+      "pdf/Ventilationssystem_Dansk_Side_6_BKT_Rektangulær_til_Rektangulær.pdf",
+      "pdf/Ventilationssystem_Dansk_Side_7_BKT_Overgang_med_Bundradius.pdf",
+      "pdf/Ventilationssystem_Dansk_Side_8_Laag_med_Tilslutningsliste.pdf",
+      "pdf/Ventilationssystem_Dansk_Side_9_Regnhat_med_Net.pdf",
+      "pdf/Ventilationssystem_Dansk_Side_10_Vejrbestandigt_Gitter.pdf"
+    ];
+    function openAllPdfs() {
+      ALL_PDFS.forEach((url, i) => {
+        setTimeout(() => window.open(url, "_blank", "noopener"), i * 350);
+      });
+    }
+  </script>
 </body>
 </html>
