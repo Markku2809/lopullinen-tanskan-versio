@@ -1,25 +1,163 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="da">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Niemi Isolering – Ventilation & Metal</title>
-  <meta name="description" content="Ventilationssystemer og metalprodukter af høj kvalitet. Gode priser og hurtig levering til Danmark." />
+  <meta name="description" content="Ventilationssystemer og metalprodukter af høj kvalitet – gode priser og hurtig levering." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/style.css" />
+
+  <style>
+    /* ========== Reset & Base ========== */
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { margin:0; padding:0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: #0c1b16;
+      line-height: 1.6;
+      background: linear-gradient(180deg, #eaf7f0 0%, #dff2e7 100%);
+    }
+
+    a { color: #0e7c4b; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .container {
+      width: min(1100px, 92vw);
+      margin-inline: auto;
+    }
+
+    /* ========== Header & Nav ========== */
+    header.site-header {
+      padding: 1.25rem 0 0.5rem;
+      background: transparent;
+    }
+    .site-header .topbar {
+      display:flex; align-items:center; justify-content:space-between;
+      gap:1rem;
+    }
+    .brand {
+      font-weight: 800; letter-spacing: .03em;
+      color:#0c1b16; font-size: 1.05rem;
+    }
+    nav.menu { display:flex; gap:1rem; flex-wrap:wrap; }
+    nav.menu a {
+      padding:.5rem .85rem;
+      border-radius: 999px;
+      font-weight:600;
+      color:#0c1b16;
+    }
+    nav.menu a.active,
+    nav.menu a:hover {
+      background:#cfead9;
+      text-decoration:none;
+    }
+
+    /* ========== Hero ========== */
+    .hero {
+      padding: clamp(2rem, 5vw, 3rem) 0 1.25rem;
+    }
+    .hero h1 {
+      margin: 0 0 .75rem 0;
+      font-size: clamp(2rem, 4.5vw, 3rem);
+      line-height:1.15;
+      letter-spacing:.01em;
+    }
+    .lead {
+      margin:0 0 1.25rem 0;
+      font-size: clamp(1rem, 1.9vw, 1.125rem);
+      color:#244036;
+    }
+    .cta-row {
+      display:flex; gap:.75rem; flex-wrap:wrap;
+    }
+    .btn, .btn-outline {
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:.5rem;
+      padding:.8rem 1.1rem;
+      border-radius: .9rem;
+      font-weight: 700;
+      letter-spacing:.01em;
+      border:2px solid transparent;
+      transition: transform .08s ease, background .2s ease, box-shadow .2s ease;
+      cursor:pointer;
+      text-decoration:none;
+    }
+    .btn {
+      background:#0e7c4b; color:white;
+      box-shadow: 0 6px 20px rgba(14,124,75,.18);
+    }
+    .btn:hover { transform: translateY(-1px); text-decoration:none; }
+    .btn:active { transform: translateY(0); }
+    .btn-outline {
+      background: transparent;
+      color:#0e7c4b;
+      border-color:#0e7c4b;
+    }
+    .btn-outline:hover {
+      background:#e5f4ec; text-decoration:none;
+    }
+
+    /* ========== Prisliste section ========== */
+    .section {
+      padding: 1.25rem 0 0.5rem;
+    }
+    .muted { color:#4b6a5d; font-size:.95rem; }
+
+    /* ========== Feature Cards ========== */
+    .grid-3 {
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:1rem;
+    }
+    @media (max-width: 900px) {
+      .grid-3 { grid-template-columns: 1fr; }
+    }
+    .card {
+      background: white;
+      border-radius: 1rem;
+      padding: 1.25rem 1.1rem;
+      box-shadow: 0 10px 28px rgba(9, 33, 23, .08);
+      border:1px solid #e5efe9;
+    }
+    .card h3 { margin:.2rem 0 .35rem; font-size:1.15rem; }
+    .card p { margin:.25rem 0 0; color:#2f4b40; }
+
+    /* ========== Footer ========== */
+    footer.site-footer {
+      margin-top: 2rem;
+      padding: 1.1rem 0 2rem;
+      color:#224136;
+    }
+    .footer-grid {
+      display:grid; gap:.75rem;
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (max-width: 700px) {
+      .footer-grid { grid-template-columns: 1fr; }
+    }
+    .small { font-size:.95rem; color:#244036; }
+    .divider {
+      height:1px; background:#cfead9; margin: .75rem 0 1rem;
+    }
+  </style>
 </head>
+
 <body>
+  <!-- ===== Header & Navigation ===== -->
   <header class="site-header">
-    <div class="container nav">
+    <div class="container topbar">
       <div class="brand">NIEMI ISOLERING</div>
       <nav class="menu">
-        <a href="index.html" class="active">Forside</a>
+        <a href="#" class="active">Forside</a>
         <a href="produkter.html">Produkter (PDF)</a>
         <a href="kontakt.html">Kontakt</a>
       </nav>
     </div>
 
+    <!-- ===== Hero ===== -->
     <section class="hero container">
       <h1>Ventilationssystemer & metalprodukter af høj kvalitet</h1>
       <p class="lead">Præcision i hvert snit – kvalitet i hver detalje. Gode priser og hurtig levering.</p>
@@ -29,64 +167,53 @@
       </div>
     </section>
   </header>
-<section id="prisliste" class="section" style="margin: 1rem 0 2rem;">
-  <a class="btn" href="pdf/Niemi_Isolering_Prisliste_DK_DISCOUNT30.pdf" target="_blank" rel="noopener">
-    Prisliste (PDF)
-  </a>
-  <span class="muted" style="margin-left:.75rem;">Åbner i ny fane</span>
-</section>
-<section id="prisliste" class="section" style="margin: 1rem 0 2rem;">
-  <a class="btn" href="pdf/Niemi_Isolering_Prisliste_DK_DISCOUNT30.pdf" target="_blank" rel="noopener">
-    Prisliste (PDF)
-  </a>
-  <span class="muted" style="margin-left:.75rem;">Åbner i ny fane</span>
-</section>
+
+  <!-- ===== Prisliste-knap ===== -->
+  <section id="prisliste" class="section container" aria-labelledby="prisliste-heading">
+    <a class="btn"
+       href="pdf/Niemi_Isolering_Prisliste_DK_DISCOUNT30.pdf"
+       target="_blank"
+       rel="noopener"
+       aria-label="Åbn prislisten som PDF i en ny fane">
+      Prisliste (PDF)
+    </a>
+    <span class="muted" style="margin-left:.75rem;">Åbner i ny fane</span>
+  </section>
 
   <main>
-    <section class="container grid-3">
+    <!-- ===== Feature cards ===== -->
+    <section class="container grid-3" style="margin-top: .75rem;">
       <article class="card">
         <h3>Kvalitet</h3>
-        <p>Komponenter og kanaler efter standardmål – mulighed for specialmål efter aftale.</p>
+        <p>Komponenter og kanaler produceret efter standardmål – og mulighed for specialmål efter aftale.</p>
       </article>
+
       <article class="card">
         <h3>Levering</h3>
         <p>Leverancer med tydelig PDF-dokumentation – nemt at planlægge og montere.</p>
       </article>
+
       <article class="card">
         <h3>Samarbejde</h3>
-        <p>Direkte dialog med producenten. Vi finder den løsning, der passer din opgave.</p>
+        <p>Direkte dialog med producenten. Vi finder løsningen, der passer din opgave – stort som småt.</p>
       </article>
-    </section>
-
-    <section class="container split">
-      <div>
-        <h2>Hvorfor vælge os?</h2>
-        <ul class="checklist">
-          <li>Standardlængder og forstærkninger efter dimensioner</li>
-          <li>Tekniske datablad & montagevejledninger (PDF)</li>
-          <li>Konkurrencedygtige priser og pålidelige leveringstider</li>
-        </ul>
-        <a class="link-arrow" href="produkter.html">Gå til PDF-kataloget</a>
-      </div>
-      <div class="panel">
-        <h4>Hurtig kontakt</h4>
-        <p>Forespørgsel på BKT-rør, flanger, bøjninger eller specialmål?</p>
-        <a class="btn full" href="kontakt.html">Skriv til os</a>
-      </div>
     </section>
   </main>
 
+  <!-- ===== Footer ===== -->
   <footer class="site-footer">
-    <div class="container footer-grid">
-      <div>
-        <strong>Niemi Isolering</strong><br>
-        Ventilation & Metalprodukter
+    <div class="container">
+      <div class="divider"></div>
+      <div class="footer-grid">
+        <div class="small">
+          <strong>Niemi Isolering</strong><br>
+          Ventilation & Metal
+        </div>
+        <div class="small">
+          E-mail: <a href="mailto:isolerigniemi@gmail.com">isolerigniemi@gmail.com</a><br>
+          WhatsApp: <a href="https://wa.me/358402434364" target="_blank" rel="noopener">+358 40 243 4364</a>
+        </div>
       </div>
-      <div>
-        <a href="produkter.html">Produkter</a><br>
-        <a href="kontakt.html">Kontakt</a>
-      </div>
-      <div>© 2025 Niemi Isolering</div>
     </div>
   </footer>
 </body>
