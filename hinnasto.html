@@ -3,64 +3,69 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Prislista – Niemi Isolering</title>
+  <title>Prisliste – Niemi Isolering</title>
   <style>
-    :root { --fg: #1f2937; --muted:#6b7280; --bg:#ffffff; --accent:#0ea5e9; }
-    * { box-sizing: border-box; }
-    body {
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
-      margin: 0; padding: 2rem;
-      color: var(--fg); background: var(--bg);
+    :root { --fg:#0c1b16; --muted:#4b6a5d; --bg:#ffffff; --accent:#0e7c4b; }
+    *{box-sizing:border-box}
+    body{
+      font-family: system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Noto Sans";
+      margin:0; padding:2rem; color:var(--fg); background:var(--bg);
+      line-height:1.6;
     }
-    header { margin-bottom: 1.5rem; }
-    h1 { font-size: 1.75rem; margin: 0 0 .25rem 0; }
-    p.subtitle { color: var(--muted); margin: 0 0 1rem 0; }
-    .sheet { margin-top: 2rem; }
-    .sheet > h2 { font-size: 1.25rem; border-bottom: 2px solid #e5e7eb; padding-bottom: .5rem; }
-    .table-wrap { overflow-x: auto; border: 1px solid #e5e7eb; border-radius: .5rem; }
-    table.price-table { width: 100%; border-collapse: collapse; }
-    table.price-table thead th {
-      text-align: left; background: #f9fafb; font-weight: 600;
-      padding: .75rem; border-bottom: 1px solid #e5e7eb;
+    header{margin:0 0 1rem 0}
+    h1{margin:0 0 .25rem 0; font-size:1.75rem}
+    p.subtitle{margin:.25rem 0 1rem; color:var(--muted)}
+    .actions{display:flex; gap:.75rem; flex-wrap:wrap; margin:0 0 1rem}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:.5rem;
+      padding:.7rem 1rem; border-radius:.8rem; font-weight:700; letter-spacing:.01em;
+      border:2px solid var(--accent); color:#fff; background:var(--accent);
+      text-decoration:none;
     }
-    table.price-table tbody td {
-      padding: .65rem .75rem; border-bottom: 1px solid #f3f4f6;
+    .btn-outline{
+      background:transparent; color:var(--accent); border-color:var(--accent);
     }
-    table.price-table tbody tr:nth-child(odd) { background: #fafafa; }
-    .foot { margin-top: 2rem; color: var(--muted); font-size: .9rem; }
+    .viewer{
+      width:100%; height:85vh; border:1px solid #e5efe9; border-radius:.6rem;
+      box-shadow: 0 6px 20px rgba(9,33,23,.06);
+    }
+    .note{margin-top:.75rem; color:var(--muted); font-size:.95rem}
+    /* Pieni responsiivinen korjaus mobiiliin */
+    @media (max-width:700px){ .viewer{height:75vh} }
   </style>
 </head>
 <body>
   <header>
-    <h1>Prislista</h1>
-    <p class="subtitle">Ajantasainen hinnasto (Excelistä muunnettu). Selaa taulukkoa vaakasuunnassa, jos sarakkeita on paljon.</p>
+    <h1>Prisliste</h1>
+    <p class="subtitle">Opdateret, dansk version – vises nedenfor og kan downloades.</p>
+    <div class="actions">
+      <!-- Lataa PDF -->
+      <a class="btn" href="pdf/Niemi_Isolering_Prisliste_DK_no_finnish_v2.pdf" download>
+        Hent prisliste (PDF)
+      </a>
+      <!-- Avaa uuteen välilehteen -->
+      <a class="btn btn-outline" href="pdf/Niemi_Isolering_Prisliste_DK_no_finnish_v2.pdf" target="_blank" rel="noopener">
+        Åbn i ny fane
+      </a>
+    </div>
   </header>
 
-  <section class="sheet">
-    <h2>LV_hinnasto</h2>
-    <div class="table-wrap">
-      <table class="price-table">
-        <thead>
-          <tr>
-            <th>Tuote</th>
-            <th>Paksuus</th>
-            <th>Hinta (€/m²)</th>
-            <th>Huomautus</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>SPU 20</td><td>20 mm</td><td>3.50</td><td>Erinomainen peruseriste</td></tr>
-          <tr><td>SPU 30</td><td>30 mm</td><td>4.20</td><td>Yleisvalinta seiniin</td></tr>
-          <tr><td>SPU 50</td><td>50 mm</td><td>5.80</td><td>Lisälämmöneristys</td></tr>
-          <tr><td>SPU 100</td><td>100 mm</td><td>9.90</td><td>Katot ja lattiat</td></tr>
-          <tr><td>SPU 150</td><td>150 mm</td><td>13.20</td><td>Erikoiskohteet</td></tr>
-          <tr><td>SPU 200</td><td>200 mm</td><td>17.50</td><td>Teollisuuskäyttöön</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
+  <!-- Upotettu PDF-katselin (pdf/ -kansion tiedosto) -->
+  <object
+    class="viewer"
+    data="pdf/Niemi_Isolering_Prisliste_DK_no_finnish_v2.pdf#view=FitH"
+    type="application/pdf">
+    <!-- Fallback jos selaimessa ei toimi -->
+    <iframe
+      class="viewer"
+      src="pdf/Niemi_Isolering_Prisliste_DK_no_finnish_v2.pdf#view=FitH">
+    </iframe>
+  </object>
 
-  <div class="foot">© 2025 Niemi Isolering</div>
+  <p class="note">
+    Hvis dokumentet ikke vises, brug “Åbn i ny fane” eller download-knappen ovenfor.
+  </p>
+
+  <div class="note">© 2025 Niemi Isolering</div>
 </body>
 </html>
-
