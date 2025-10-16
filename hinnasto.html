@@ -7,31 +7,13 @@
   <style>
     :root { --fg:#1a202c; --muted:#5f6775; --accent:#2f855a; --border:#e7e9f2; }
     * { box-sizing: border-box; }
-    body {
-      margin:0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      color:var(--fg);
-      background:#fff;
-      line-height:1.6;
-    }
-    .bar {
-      position:sticky;
-      top:0;
-      z-index:10;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:.5rem;
-      padding:.75rem 1rem;
-      border-bottom:1px solid var(--border);
-      background:#fff;
-    }
+    body { margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; color:var(--fg); background:#fff; line-height:1.6; }
+    .bar { position:sticky; top:0; z-index:10; display:flex; align-items:center; justify-content:space-between; gap:.5rem;
+           padding:.75rem 1rem; border-bottom:1px solid var(--border); background:#fff; }
     .title { font-weight:800; letter-spacing:-.02em; }
-    .btn, .btn-outline {
-      display:inline-flex; align-items:center; justify-content:center;
-      gap:.5rem; padding:.6rem .9rem;
-      border-radius:.7rem; font-weight:700; text-decoration:none;
-    }
+    .actions { display:flex; gap:.5rem; flex-wrap:wrap; }
+    .btn, .btn-outline { display:inline-flex; align-items:center; justify-content:center; gap:.5rem; padding:.6rem .9rem;
+      border-radius:.7rem; font-weight:700; text-decoration:none; }
     .btn { color:#fff; background:var(--accent); border:2px solid var(--accent); }
     .btn-outline { color:var(--accent); border:2px solid var(--accent); background:transparent; }
     .viewer { width:100%; height:88vh; border:0; display:block; }
@@ -46,17 +28,17 @@
     <button class="btn-outline" onclick="goBack()" aria-label="Tilbage til forsiden">← Tilbage</button>
     <div class="title">Prisliste – Isoleringsbeklædning</div>
     <div class="actions">
-      <a class="btn-outline" href="/hinnasto/prisliste.pdf?v=4" target="_blank" rel="noopener">Åbn i ny fane</a>
-      <a class="btn" href="/hinnasto/prisliste.pdf?v=4" download>Hent PDF</a>
+      <a class="btn-outline" href="./hinnasto/prisliste.pdf?v=3" target="_blank" rel="noopener">Åbn i ny fane</a>
+      <a class="btn" href="./hinnasto/prisliste.pdf?v=3" download>Hent PDF</a>
     </div>
   </div>
 
   <!-- Upotettu katselu -->
   <object class="viewer"
-          data="/hinnasto/prisliste.pdf?v=4#view=FitH"
+          data="./hinnasto/prisliste.pdf?v=3#view=FitH"
           type="application/pdf">
     <iframe class="viewer"
-            src="/hinnasto/prisliste.pdf?v=4#view=FitH"></iframe>
+            src="./hinnasto/prisliste.pdf?v=3#view=FitH"></iframe>
   </object>
 
   <div class="note">Hvis dokumentet ikke vises, brug “Åbn i ny fane” eller “Hent PDF”.</div>
