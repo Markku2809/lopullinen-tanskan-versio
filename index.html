@@ -7,7 +7,7 @@
   <meta name="description" content="Ventilationssystemer og metalprodukter af høj kvalitet – gode priser og hurtig levering." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 
   <style>
     /* ===== Reset & base ===== */
@@ -23,6 +23,7 @@
     }
     a { color:#2f855a; text-decoration:none; }
     a:hover { text-decoration:underline; }
+    img { max-width:100%; height:auto; }
 
     .container { width:min(1100px, 92vw); margin-inline:auto; }
 
@@ -81,10 +82,38 @@
     .card h3 { margin:.2rem 0 .35rem; font-size:1.15rem; font-weight:800; }
     .card p  { margin:.25rem 0 0; color:#2f4b40; }
 
+    /* ===== Image sections ===== */
+    .imgwrap {
+      text-align:center;
+      margin-top:1rem;
+    }
+    .pretty {
+      max-width:90%;
+      border-radius:1rem;
+      box-shadow:0 6px 18px rgba(0,0,0,.15);
+    }
+    .imgcap {
+      color:#4b6a5d;
+      font-style:italic;
+      margin-top:.5rem;
+    }
+
+    /* ===== CTA banner (tilbuds-tekst) ===== */
+    .cta-banner {
+      margin:1.5rem auto 0;
+      padding:1rem 1.25rem;
+      background:#fff7ea;
+      border:1px solid #edd9b6;
+      border-radius:1rem;
+      box-shadow:0 8px 20px rgba(0,0,0,.06);
+    }
+    .cta-banner p { margin:.35rem 0; }
+    .cta-banner strong { font-weight:800; }
+
     /* ===== Footer ===== */
-    footer.site-footer { margin-top:2rem; padding:1.1rem 0 2rem; color:#3d3429; }
-    .footer-grid { display:grid; gap:.75rem; grid-template-columns:repeat(2,1fr); }
-    @media (max-width:700px){ .footer-grid{ grid-template-columns:1fr; } }
+    footer.site-footer { margin-top: 2rem; padding: 1.1rem 0 2rem; color:#3d3429; }
+    .footer-grid { display:grid; gap:.75rem; grid-template-columns: repeat(2, 1fr); }
+    @media (max-width:700px) { .footer-grid { grid-template-columns:1fr; } }
     .small { font-size:.95rem; color:#3d3429; }
     .divider { height:1px; background:#e4d9cf; margin:.75rem 0 1rem; }
   </style>
@@ -114,6 +143,12 @@
     </section>
   </header>
 
+  <!-- ===== Kanttikanava-kuva ===== -->
+  <section class="container imgwrap">
+    <img loading="lazy" class="pretty" src="assets/julkaisuun.png" alt="Kanttikanavat – standard og specialmål">
+    <p class="imgcap">Standardkanaler og specialmål efter aftale</p>
+  </section>
+
   <!-- ===== Prisliste-knap (avaa hinnasto SIVULLA) ===== -->
   <section id="prisliste" class="section container" aria-labelledby="prisliste-heading">
     <a class="btn"
@@ -122,6 +157,13 @@
       Prisliste – Isoleringsbeklædning (PDF)
     </a>
     <span class="muted" style="margin-left:.75rem;">Åbner på siden</span>
+  </section>
+
+  <!-- ===== Tarjous / tilbuds-teksti (uusi) ===== -->
+  <section class="container cta-banner" aria-label="Tilbudsopfordring">
+    <p><strong>Har du brug for et tilbud?</strong></p>
+    <p>Send os <strong>tegninger eller mål</strong> på de dele du ønsker – så beregner vi hurtigt en <strong>materialepris</strong> og levering.</p>
+    <p class="muted">Mail: <a href="mailto:isolerigniemi@gmail.com">isolerigniemi@gmail.com</a> • WhatsApp: <a href="https://wa.me/358402434364" target="_blank" rel="noopener">+358 40 243 4364</a></p>
   </section>
 
   <main>
@@ -142,20 +184,13 @@
         <p>Direkte dialog med producenten. Vi finder løsningen, der passer din opgave – stort som småt.</p>
       </article>
     </section>
+
+    <!-- ===== Isolering-päällys-kuva ===== -->
+    <section class="container imgwrap">
+      <img loading="lazy" class="pretty" src="assets/julkaisu.png" alt="Isoleringsbeklædning – præcis og pæn udførelse">
+      <p class="imgcap">Isoleringsbeklædning udført med præcision og erfaring</p>
+    </section>
   </main>
-  <!-- ===== Kontakt-opfordring ===== -->
-  <section class="section container" style="margin-top:1.5rem;">
-    <div style="background:#e7f3ec; border:1px solid #d2e8dc; border-radius:1rem; padding:1.25rem 1.5rem; box-shadow:0 4px 10px rgba(47,133,90,.1);">
-      <h2 style="margin-top:0; color:#2f855a;">📐 Har du brug for et tilbud?</h2>
-      <p>Send os dine <strong>tegninger eller mål</strong> på de produkter, du har brug for,<br>
-      så <strong>beregner vi et materiale- og pristilbud</strong> til dig hurtigt og præcist.</p>
-      <p>
-        📧 <strong>E-mail:</strong> <a href="mailto:isolerigniemi@gmail.com">isolerigniemi@gmail.com</a><br>
-        📞 <strong>WhatsApp:</strong> <a href="https://wa.me/358402434364" target="_blank" rel="noopener">+358 40 243 4364</a>
-      </p>
-      <p style="color:#3d3429; font-style:italic;">Vi hjælper gerne – også med specialmål og særlige løsninger.</p>
-    </div>
-  </section>
 
   <!-- ===== Footer ===== -->
   <footer class="site-footer">
