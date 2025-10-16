@@ -14,14 +14,16 @@
     *,*::before,*::after { box-sizing: border-box; }
     html,body { margin:0; padding:0; }
     html { scroll-behavior: smooth; }
+
     body {
       font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      color: #1a202c; /* päivitetty tekstiväri */
+      color: #1a202c;
       line-height: 1.6;
-      background: linear-gradient(180deg, #f0f9f4 0%, #ffffff 100%); /* päivitetty taustan liuku */
+      background: linear-gradient(180deg, #e9f7ef 0%, #f8fcf9 100%);
+      min-height: 100vh;
     }
 
-    a { color: #2f855a; text-decoration: none; }  /* päivitetty linkkiväri */
+    a { color: #2f855a; text-decoration: none; }
     a:hover { text-decoration: underline; }
 
     .container { width: min(1100px, 92vw); margin-inline: auto; }
@@ -37,10 +39,11 @@
       border-radius: 999px;
       font-weight:600;
       color:#1a202c;
+      transition: background 0.2s ease;
     }
     nav.menu a.active,
     nav.menu a:hover {
-      background:#dcefe6; /* pehmeämpi hover-tausta */
+      background:#dcefe6;
       text-decoration:none;
     }
 
@@ -53,12 +56,18 @@
       letter-spacing:.01em;
       font-weight:800;
     }
-    .lead { margin:0 0 1.25rem 0; font-size: clamp(1rem, 1.9vw, 1.125rem); color:#2b3a33; }
+    .lead {
+      margin:0 0 1.25rem 0;
+      font-size: clamp(1rem, 1.9vw, 1.125rem);
+      color:#2b3a33;
+    }
 
     .cta-row { display:flex; gap:.75rem; flex-wrap:wrap; }
 
     .btn, .btn-outline {
-      display:inline-flex; align-items:center; justify-content:center;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
       gap:.5rem;
       padding:.8rem 1.1rem;
       border-radius: .9rem;
@@ -69,13 +78,13 @@
       cursor:pointer;
       text-decoration:none;
     }
+
     .btn {
-      background:#2f855a;   /* pääväri */
+      background:#2f855a;
       color:#fff;
-      box-shadow: 0 6px 20px rgba(47,133,90,.18);
+      box-shadow: 0 6px 20px rgba(47,133,90,.15);
     }
     .btn:hover { transform: translateY(-1px); text-decoration:none; }
-    .btn:active { transform: translateY(0); }
 
     .btn-outline {
       background: transparent;
@@ -140,8 +149,8 @@
     <a class="btn"
        href="hinnasto/Niemi_Isolering_Prisliste_DK_no_finnish_v2.pdf"
        target="_blank" rel="noopener"
-       aria-label="Åbn prisliste og isoleringsbeklædning som PDF i ny fane">
-      Prisliste – Isoleringsbeklædning (PDF)
+       aria-label="Åbn prislisten som PDF i en ny fane">
+      Prisliste & Isoleringsbeklædninger (PDF)
     </a>
     <span class="muted" style="margin-left:.75rem;">Åbner i ny fane</span>
   </section>
