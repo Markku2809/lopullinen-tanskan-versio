@@ -16,12 +16,12 @@
     html { scroll-behavior: smooth; }
     body {
       font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      color: #1a202c; /* ← päivitetty tekstiväri */
+      color: #1a202c; /* päivitetty tekstiväri */
       line-height: 1.6;
-      background: linear-gradient(180deg, #f0f9f4 0%, #ffffff 100%); /* ← päivitetty taustan liuku */
+      background: linear-gradient(180deg, #f0f9f4 0%, #ffffff 100%); /* päivitetty taustan liuku */
     }
 
-    a { color: #2f855a; text-decoration: none; }            /* ← päivitetty linkkiväri */
+    a { color: #2f855a; text-decoration: none; }  /* päivitetty linkkiväri */
     a:hover { text-decoration: underline; }
 
     .container { width: min(1100px, 92vw); margin-inline: auto; }
@@ -40,7 +40,7 @@
     }
     nav.menu a.active,
     nav.menu a:hover {
-      background:#dcefe6;                                  /* ← pehmeämpi hover-tausta */
+      background:#dcefe6; /* pehmeämpi hover-tausta */
       text-decoration:none;
     }
 
@@ -70,7 +70,7 @@
       text-decoration:none;
     }
     .btn {
-      background:#2f855a;                                   /* ← päivitetty pääväri */
+      background:#2f855a;   /* pääväri */
       color:#fff;
       box-shadow: 0 6px 20px rgba(47,133,90,.18);
     }
@@ -79,8 +79,8 @@
 
     .btn-outline {
       background: transparent;
-      color:#2f855a;                                        /* ← päivitetty */
-      border-color:#2f855a;                                 /* ← päivitetty */
+      color:#2f855a;
+      border-color:#2f855a;
     }
     .btn-outline:hover { background:#e7f3ec; text-decoration:none; }
 
@@ -107,30 +107,8 @@
     .footer-grid { display:grid; gap:.75rem; grid-template-columns: repeat(2, 1fr); }
     @media (max-width: 700px) { .footer-grid { grid-template-columns: 1fr; } }
     .small { font-size:.95rem; color:#244036; }
-    .divider { height:1px; background:#dcefe6; margin: .75rem 0 1rem; } /* ← sävytetty uudella hover-taustalla */
+    .divider { height:1px; background:#dcefe6; margin: .75rem 0 1rem; }
   </style>
-  <style>
-  /* --- Palette override (metsänvihreä) --- */
-  a { color:#2f855a !important; }
-  body {
-    color:#1a202c !important;
-    background: linear-gradient(180deg, #f0f9f4 0%, #ffffff 100%) !important;
-  }
-  .btn {
-    background:#2f855a !important;
-    box-shadow:0 6px 20px rgba(47,133,90,.18) !important;
-  }
-  .btn-outline {
-    color:#2f855a !important;
-    border-color:#2f855a !important;
-  }
-  nav.menu a.active,
-  nav.menu a:hover { background:#dcefe6 !important; }
-  .divider { background:#dcefe6 !important; }
-  .brand { color:#1a202c !important; }
-  nav.menu a { color:#1a202c !important; }
-</style>
-
 </head>
 
 <body>
@@ -162,8 +140,8 @@
     <a class="btn"
        href="hinnasto/Niemi_Isolering_Prisliste_DK_no_finnish_v2.pdf"
        target="_blank" rel="noopener"
-       aria-label="Åbn prislisten som PDF i en ny fane">
-      Prisliste (PDF)
+       aria-label="Åbn prisliste og isoleringsbeklædning som PDF i ny fane">
+      Prisliste – Isoleringsbeklædning (PDF)
     </a>
     <span class="muted" style="margin-left:.75rem;">Åbner i ny fane</span>
   </section>
