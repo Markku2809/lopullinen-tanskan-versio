@@ -19,7 +19,8 @@
       font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       color: #1a202c;
       line-height: 1.6;
-      background: linear-gradient(180deg, #e9f7ef 0%, #f8fcf9 100%);
+      /* Evening Haze (vaalea liila) */
+      background: linear-gradient(180deg, #f1eff8 0%, #fbfafc 100%);
       min-height: 100vh;
     }
 
@@ -43,7 +44,7 @@
     }
     nav.menu a.active,
     nav.menu a:hover {
-      background:#dcefe6;
+      background:#eceff7; /* hienovarainen hover liilaan sopivaksi */
       text-decoration:none;
     }
 
@@ -80,7 +81,7 @@
     }
 
     .btn {
-      background:#2f855a;
+      background:#2f855a;        /* vihreä korostus toimii hyvin liilan kanssa */
       color:#fff;
       box-shadow: 0 6px 20px rgba(47,133,90,.15);
     }
@@ -95,7 +96,7 @@
 
     /* ========== Sections ========== */
     .section { padding: 1.25rem 0 .5rem; }
-    .muted { color:#4b6a5d; font-size:.95rem; }
+    .muted { color:#5f6775; font-size:.95rem; } /* hieman neutraalimpi liilan kanssa */
 
     /* ========== Feature Cards ========== */
     .grid-3 { display:grid; grid-template-columns: repeat(3, 1fr); gap:1rem; }
@@ -106,17 +107,25 @@
       border-radius: 1rem;
       padding: 1.25rem 1.1rem;
       box-shadow: 0 10px 28px rgba(9, 33, 23, .08);
-      border:1px solid #e5efe9;
+      border:1px solid #e7e9f2; /* liilaan sopiva rajaus */
     }
     .card h3 { margin:.2rem 0 .35rem; font-size:1.15rem; font-weight:800; }
     .card p { margin:.25rem 0 0; color:#2f4b40; }
 
     /* ========== Footer ========== */
-    footer.site-footer { margin-top: 2rem; padding: 1.1rem 0 2rem; color:#224136; }
+    footer.site-footer { margin-top: 2rem; padding: 1.1rem 0 2rem; color:#2a2e38; }
     .footer-grid { display:grid; gap:.75rem; grid-template-columns: repeat(2, 1fr); }
     @media (max-width: 700px) { .footer-grid { grid-template-columns: 1fr; } }
-    .small { font-size:.95rem; color:#244036; }
-    .divider { height:1px; background:#dcefe6; margin: .75rem 0 1rem; }
+    .small { font-size:.95rem; color:#3a3f4a; }
+    .divider { height:1px; background:#eceff7; margin: .75rem 0 1rem; }
+  </style>
+
+  <!-- Varmistus: ohita mahdolliset ulkoiset tyylit (assets/style.css tms.) -->
+  <style>
+    body {
+      background: linear-gradient(180deg, #f1eff8 0%, #fbfafc 100%) !important;
+      min-height: 100vh !important;
+    }
   </style>
 </head>
 
@@ -149,8 +158,8 @@
     <a class="btn"
        href="hinnasto/Niemi_Isolering_Prisliste_DK_no_finnish_v2.pdf"
        target="_blank" rel="noopener"
-       aria-label="Åbn prislisten som PDF i en ny fane">
-      Prisliste & Isoleringsbeklædninger (PDF)
+       aria-label="Åbn prisliste og isoleringsbeklædninger som PDF i ny fane">
+      Prisliste – Isoleringsbeklædning (PDF)
     </a>
     <span class="muted" style="margin-left:.75rem;">Åbner i ny fane</span>
   </section>
