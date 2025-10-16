@@ -87,6 +87,9 @@
       text-align:center;
       margin-top:1rem;
     }
+    /* Tiivistä peräkkäisten kuvasektioiden väli */
+    .imgwrap + .imgwrap { margin-top:.5rem; }
+
     .pretty {
       max-width:90%;
       border-radius:1rem;
@@ -124,7 +127,7 @@
   <header class="site-header">
     <div class="container topbar">
       <div class="brand">NIEMI ISOLERING</div>
-      <nav class="menu">
+      <nav class="menu" aria-label="Hovedmenu">
         <a href="#" class="active">Forside</a>
         <a href="produkter.html">Produkter (PDF)</a>
         <a href="hinnasto.html">Prisliste</a>
@@ -149,6 +152,12 @@
     <p class="imgcap">Standardkanaler og specialmål efter aftale</p>
   </section>
 
+  <!-- ===== Isolering-päällys-kuva (siirretty heti ylös) ===== -->
+  <section class="container imgwrap">
+    <img loading="lazy" class="pretty" src="assets/julkaisu.png" alt="Isoleringsbeklædning – præcis og pæn udførelse">
+    <p class="imgcap">Isoleringsbeklædning udført med præcision og erfaring</p>
+  </section>
+
   <!-- ===== Prisliste-knap (avaa hinnasto SIVULLA) ===== -->
   <section id="prisliste" class="section container" aria-labelledby="prisliste-heading">
     <a class="btn"
@@ -159,7 +168,7 @@
     <span class="muted" style="margin-left:.75rem;">Åbner på siden</span>
   </section>
 
-  <!-- ===== Tarjous / tilbuds-teksti (uusi) ===== -->
+  <!-- ===== Tarjous / tilbuds-teksti ===== -->
   <section class="container cta-banner" aria-label="Tilbudsopfordring">
     <p><strong>Har du brug for et tilbud?</strong></p>
     <p>Send os <strong>tegninger eller mål</strong> på de dele du ønsker – så beregner vi hurtigt en <strong>materialepris</strong> og levering.</p>
@@ -183,12 +192,6 @@
         <h3>Samarbejde</h3>
         <p>Direkte dialog med producenten. Vi finder løsningen, der passer din opgave – stort som småt.</p>
       </article>
-    </section>
-
-    <!-- ===== Isolering-päällys-kuva ===== -->
-    <section class="container imgwrap">
-      <img loading="lazy" class="pretty" src="assets/julkaisu.png" alt="Isoleringsbeklædning – præcis og pæn udførelse">
-      <p class="imgcap">Isoleringsbeklædning udført med præcision og erfaring</p>
     </section>
   </main>
 
