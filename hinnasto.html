@@ -30,7 +30,6 @@
       box-shadow: 0 6px 20px rgba(9,33,23,.06);
     }
     .note{margin-top:.75rem; color:var(--muted); font-size:.95rem}
-    /* Pieni responsiivinen korjaus mobiiliin */
     @media (max-width:700px){ .viewer{height:75vh} }
   </style>
 </head>
@@ -39,26 +38,22 @@
     <h1>Prisliste</h1>
     <p class="subtitle">Opdateret, dansk version – vises nedenfor og kan downloades.</p>
     <div class="actions">
-      <!-- Lataa PDF -->
-      <a class="btn" href="pdf/Niemi_Isolering_Prisliste_DK_no_finnish_v2.pdf" download>
+      <a class="btn" href="hinnasto/Niemi_Isolering_Prisliste_DK_no_finnish_v2.pdf" download>
         Hent prisliste (PDF)
       </a>
-      <!-- Avaa uuteen välilehteen -->
-      <a class="btn btn-outline" href="pdf/Niemi_Isolering_Prisliste_DK_no_finnish_v2.pdf" target="_blank" rel="noopener">
+      <a class="btn btn-outline" href="hinnasto/Niemi_Isolering_Prisliste_DK_no_finnish_v2.pdf" target="_blank" rel="noopener">
         Åbn i ny fane
       </a>
     </div>
   </header>
 
-  <!-- Upotettu PDF-katselin (pdf/ -kansion tiedosto) -->
   <object
     class="viewer"
-    data="pdf/Niemi_Isolering_Prisliste_DK_no_finnish_v2.pdf#view=FitH"
+    data="hinnasto/Niemi_Isolering_Prisliste_DK_no_finnish_v2.pdf#view=FitH"
     type="application/pdf">
-    <!-- Fallback jos selaimessa ei toimi -->
     <iframe
       class="viewer"
-      src="pdf/Niemi_Isolering_Prisliste_DK_no_finnish_v2.pdf#view=FitH">
+      src="hinnasto/Niemi_Isolering_Prisliste_DK_no_finnish_v2.pdf#view=FitH">
     </iframe>
   </object>
 
