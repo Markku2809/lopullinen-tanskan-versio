@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Kontakt | Vents Ravins</title>
+  <title>Kontakt</title>
   <link rel="stylesheet" href="style.css">
   <style>
     body { font-family: system-ui, sans-serif; margin:0; line-height:1.6; }
@@ -36,61 +36,4 @@
       <section class="card">
         <h2>Kontaktoplysninger</h2>
         <ul style="list-style:none; padding:0;">
-          <li><strong>Kontaktperson:</strong> Vents Ravins</li>
-          <li><strong>Telefon:</strong> <a href="tel:+37120174363">+371 20174363</a></li>
-        </ul>
-        <p class="muted">Ring eller skriv, hvis du har spørgsmål – vi bider ikke, medmindre markederne gør det først.</p>
-      </section>
-
-      <!-- Kontaktformular -->
-      <section class="card">
-        <h2>Skriv en besked</h2>
-        <form id="contact-form">
-          <label for="name">Navn</label>
-          <input id="name" name="Navn" type="text" placeholder="Dit navn" required>
-
-          <label for="email">E-mail</label>
-          <input id="email" name="E-mail" type="email" placeholder="du@eksempel.dk" required>
-
-          <label for="phone">Telefon</label>
-          <input id="phone" name="Telefon" type="tel" placeholder="+45 ..." >
-
-          <label for="message">Besked</label>
-          <textarea id="message" name="Besked" rows="6" placeholder="Hvad kan vi hjælpe med?" required></textarea>
-
-          <button type="submit">Send</button>
-          <p id="status" class="muted"></p>
-        </form>
-      </section>
-    </div>
-  </main>
-
-  <footer>
-    <div class="container">
-      <small>&copy; <span id="year"></span> Vents Ravins. Alle rettigheder forbeholdes.</small>
-    </div>
-  </footer>
-
-  <script>
-  // Aktiver "tak"-meddelelse uden at forlade siden
-  const form = document.getElementById('contact-form');
-  const status = document.getElementById('status');
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const data = new FormData(form);
-    const resp = await fetch("https://formspree.io/f/mdkwvlew", {
-      method: "POST",
-      body: data,
-      headers: { "Accept": "application/json" }
-    });
-    if (resp.ok) {
-      form.reset();
-      status.textContent = "Tak for din besked! Vi vender snart tilbage.";
-    } else {
-      status.textContent = "Ups! Noget gik galt. Prøv venligst igen.";
-    }
-  });
-  document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
-</body>
-</html>
+          <li><strong>Telefon:</strong> <a href="tel:+37120174363">+37
