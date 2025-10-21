@@ -11,4 +11,86 @@
     a { color:inherit; text-decoration:none; }
     .container { max-width:700px; margin:0 auto; padding:1rem; }
     h1 { margin:.3rem 0 1rem; }
-    .card { border:1px solid #ddd; border-radius
+    .card { border:1px solid #ddd; border-radius:12px; padding:1.5rem; margin-top:1.5rem; }
+    label { display:block; font-weight:600; margin-top:.75rem; }
+    input, textarea {
+      width:100%;
+      padding:.75rem;
+      border:1px solid #ccc;
+      border-radius:10px;
+      font-size:1rem;
+      box-sizing:border-box;
+    }
+    button {
+      margin-top:1rem;
+      padding:.75rem 1.5rem;
+      border:0;
+      border-radius:10px;
+      background:#111;
+      color:#fff;
+      cursor:pointer;
+    }
+    button:hover { opacity:.9; }
+    .muted { color:#666; font-size:.95rem; margin-top:1rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <a href="index.html">← Hjem</a>
+      <h1>Kontakt</h1>
+      <p>Kontakt os – vi svarer hurtigere end en aktiekurs kan nå at blinke. 😉</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Skriv en besked</h2>
+      <form id="contact-form">
+        <label for="name">Navn</label>
+        <input id="name" name="Navn" type="text" placeholder="Dit navn" required>
+
+        <label for="email">E-mail</label>
+        <input id="email" name="E-mail" type="email" placeholder="du@eksempel.dk" required>
+
+        <label for="phone">Telefon</label>
+        <input id="phone" name="Telefon" type="tel" placeholder="+45 ..." >
+
+        <label for="message">Besked</label>
+        <textarea id="message" name="Besked" rows="6" placeholder="Hvad kan vi hjælpe med?" required></textarea>
+
+        <button type="submit">Send</button>
+        <p id="status" class="muted"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <small>&copy; <span id="year"></span> Alle rettigheder forbeholdes.</small>
+    </div>
+  </footer>
+
+  <script>
+  // "Tak"-besked uden at forlade siden
+  const form = document.getElementById('contact-form');
+  const status = document.getElementById('status');
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const data = new FormData(form);
+    const resp = await fetch("https://formspree.io/f/mdkwvlew", {
+      method: "POST",
+      body: data,
+      headers: { "Accept": "application/json" }
+    });
+    if (resp.ok) {
+      form.reset();
+      status.textContent = "Tak for din besked! Vi vender snart tilbage.";
+    } else {
+      status.textContent = "Ups! Noget gik galt. Prøv venligst igen.";
+    }
+  });
+  document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
